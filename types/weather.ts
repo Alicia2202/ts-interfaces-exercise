@@ -7,9 +7,12 @@
 // TODO: esta interface debería extender de GeoLocation
 // TODO: completar el campo "timezone" (es string)
 // TODO: completar el campo "timezone_abbreviation" (es string, viene en la respuesta)
-export interface WeatherResponse {
+export interface WeatherResponse extends GeoLocation{
   current: CurrentWeather;
   hourly: HourlyWeather;
+  timezone: string;
+  timezone_abbreviation: string;
+  
 }
 
 /* ---------------------------------- */
@@ -18,6 +21,7 @@ export interface GeoLocation {
   latitude: number;
   longitude: number;
   // TODO: agregar el campo "elevation" (number)
+  elevation: number; 
 }
 
 /* ---------------------------------- */
@@ -26,6 +30,7 @@ export interface CurrentWeather {
   temperature: number;
   wind_speed: number;
   time: string;
+  interval: number;//--------->DUDA¿?
   // TODO: completar este campo según la respuesta real de la API
   // Tip: inspeccioná la respuesta JSON de Open-Meteo, el campo se
   // llama "interval" y es de tipo number (segundos entre mediciones).
@@ -41,6 +46,7 @@ export interface CurrentWeather {
 //   - "relative_humidity_2m": number[]
 // Corregí los tipos de cada campo y agregá los que faltan.
 export interface HourlyWeather {
-  time: any[];
-  temperature_2m: any[];
+  time: string[];
+  temperature_2m: number[];
+  relative_humidity_2m: number[];
 }

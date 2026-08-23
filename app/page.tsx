@@ -34,7 +34,11 @@ export default async function HomePage() {
 }
 
 // TODO: declará una interface para las props de este componente
-function DebugInfo(props) {
+interface DebugInfoProps{
+  data:any;
+}
+
+function DebugInfo(props:DebugInfoProps) {
   return (
     <details>
       <summary>Respuesta cruda (debug)</summary>
