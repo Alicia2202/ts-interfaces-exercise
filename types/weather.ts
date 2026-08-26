@@ -12,7 +12,7 @@ export interface WeatherResponse extends GeoLocation{
   hourly: HourlyWeather;
   timezone: string;
   timezone_abbreviation: string;
-  
+
 }
 
 /* ---------------------------------- */
@@ -21,21 +21,23 @@ export interface GeoLocation {
   latitude: number;
   longitude: number;
   // TODO: agregar el campo "elevation" (number)
-  elevation: number; 
+  elevation: number;
 }
 
 /* ---------------------------------- */
 
 export interface CurrentWeather {
-  temperature: number;
-  wind_speed: number;
+  temperature_2m: number;
+  wind_speed_10m: number;
   time: string;
-  interval: number;//--------->DUDA¿?
+  interval: number;
   // TODO: completar este campo según la respuesta real de la API
   // Tip: inspeccioná la respuesta JSON de Open-Meteo, el campo se
   // llama "interval" y es de tipo number (segundos entre mediciones).
   // interval: ???;
 }
+
+
 
 /* ---------------------------------- */
 

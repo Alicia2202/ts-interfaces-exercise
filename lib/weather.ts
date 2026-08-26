@@ -24,5 +24,6 @@ export async function getWeather(
   }
 
   const data: WeatherResponse = await res.json();
+  
   return data;
 }
